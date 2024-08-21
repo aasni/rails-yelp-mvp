@@ -1,0 +1,14 @@
+<h1>HELLO GRAPE HOUSE</h1>
+<h3>Name: <strong><%= @restaurant.name %></strong></h3>
+<p>Address: <strong><%= @restaurant.address %></strong></p>
+<p>Number: <strong><%= @restaurant.phone_number %></strong></p>
+<p>Category: <strong><%= @restaurant.category %></strong></p>
+
+<h3>Reviews of restaurant</h3>
+<ul>
+  <% @restaurant.reviews.each do |data| %>
+    <li><strong>Rating:</strong> <%= data.rating %> - <%= data.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to "add new review", new_restaurant_review_path(@restaurant)  %>
